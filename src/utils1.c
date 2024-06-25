@@ -1,4 +1,4 @@
-#include "../includes/so_long.h"
+#include "../includes/mada.h"
 
 void	error_load_prs(t_data *data)
 {

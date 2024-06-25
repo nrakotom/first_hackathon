@@ -1,34 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fharifen <fiononana.hari@gmail.com>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 08:48:37 by fharifen          #+#    #+#             */
-/*   Updated: 2024/06/25 11:16:16 by herirand         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/mada.h"
 #include <fcntl.h>
-
-// int	check_argv(char *av)
-// {
-// 	const char	*ber;
-// 	int			i;
-// 	int			j;
-//
-// 	ber = ".ber";
-// 	i = ft_strlen(av);
-// 	if (i < 5)
-// 		return (0);
-// 	j = 4;
-// 	while (j)
-// 		if (av[--i] != ber[--j])
-// 			return (0);
-// 	return (1);
-// }
 
 static void	init_plus(t_data *data)
 {
@@ -78,6 +50,7 @@ int	main(int argc, char *argv[])
 	data = malloc(sizeof(t_data));
 	if (data == NULL)
 		return (EXIT_FAILURE);
+	introd();
 	init_data(data, fd, map);
 	init_window(data);
 	window_move(data);

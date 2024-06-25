@@ -1,4 +1,4 @@
-#include "../includes/so_long.h"
+#include "../includes/mada.h"
 
 void	load_player_images(t_data *data)
 {
@@ -58,18 +58,18 @@ void	put_image(t_data *data)
 	if (data->map[data->i][data->j] == 'P' || data->map[data->p_y
 		/ PIX_H][data->p_x / PIX_W] == '0')
 		display_prs(data, data->p_y, data->p_x);
-	// if (data->map[data->i][data->j] == '1')
-	// 	display_wall(data);
-	// if (data->map[data->i][data->j] == '0')
-	// 	display_ground(data, data->i * PIX_H, data->j * PIX_W);
-	if ((data->map[data->i][data->j] == 'A') || (data->map[data->i][data->j] == 'B')||
-		(data->map[data->i][data->j] == 'C')|| (data->map[data->i][data->j] == 'D')||
-		(data->map[data->i][data->j] == 'E')|| (data->map[data->i][data->j] == 'F'))
-	{
-		display_coin(data);
-	}
-	// if (data->map[data->i][data->j] == 'E')
-	// 	display_ground(data, data->i * PIX_H, data->j * PIX_W);
+	if (data->map[data->i][data->j] == 'A') 
+		display_icons(data, "./assets/diego.xpm");	
+	if (data->map[data->i][data->j] == 'B') 
+		display_icons(data, "./assets/majunga.xpm");	
+	if (data->map[data->i][data->j] == 'C') 
+		display_icons(data, "./assets/tamatave.xpm");	
+	if (data->map[data->i][data->j] == 'D') 
+		display_icons(data, "./assets/tana.xpm");	
+	if (data->map[data->i][data->j] == 'E') 
+		display_icons(data, "./assets/fianara.xpm");	
+	if (data->map[data->i][data->j] == 'F') 
+		display_icons(data, "./assets/tulear.xpm");	
 }
 
 int	init_window(t_data *data)

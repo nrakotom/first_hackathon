@@ -1,4 +1,4 @@
-#include "../includes/so_long.h"
+#include "../includes/mada.h"
 
 int	move_player(int keysym, t_data *data)
 {

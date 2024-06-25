@@ -1,4 +1,4 @@
-#include "../includes/so_long.h"
+#include "../includes/mada.h"
 
 void	draw_coin(t_data *data, int x, int y)
 {

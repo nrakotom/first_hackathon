@@ -1,4 +1,4 @@
-#include "../includes/so_long.h"
+#include "../includes/mada.h"
 #include <stdio.h>
 
 void	display_wall(t_data *data)
@@ -23,33 +23,38 @@ void	display_prs(t_data *data, int y, int x)
 	p_img = NULL;
 	if (data->map[data->p_y / PIX_H][data->p_x / PIX_W] == 'A')
 	{
-		intro(data, "ANTSIRANANA", "./assets/antakarana.xpm");
-		sleep(3);
+		intro(data, "ANTSIRANANA", "./assets/antsiranana.xpm");
+		sleep(5);
+		data->count--;
 	}
 	if (data->map[data->p_y / PIX_H][data->p_x / PIX_W] == 'B')
 	{
-		intro(data, "MANJUNGA", "./assets/antakarana.xpm");
-		sleep(3);
+		intro(data, "MANJUNGA", "./assets/majanga.xpm");
+		sleep(5);
 	}
 	if (data->map[data->p_y / PIX_H][data->p_x / PIX_W] == 'C')
 	{
-		intro(data, "TOAMASINA", "./assets/antakarana.xpm");
-		sleep(3);
+		intro(data, "TOAMASINA", "./assets/tomasina.xpm");
+		sleep(5);
+		data->count--;
 	}
 	if (data->map[data->p_y / PIX_H][data->p_x / PIX_W] == 'D')
 	{
-		intro(data, "ANTANANARIVO", "./assets/antakarana.xpm");
-		sleep(3);
+		intro(data, "ANTANANARIVO", "./assets/antananarivo.xpm");
+		sleep(5);
+		data->count--;
 	}
 	if (data->map[data->p_y / PIX_H][data->p_x / PIX_W] == 'E')
 	{
-		intro(data, "FIANARANTSOA", "./assets/antakarana.xpm");
-		sleep(3);
+		intro(data, "FIANARANTSOA", "./assets/fianarantsoa.xpm");
+		sleep(5);
+		data->count--;
 	}
 	if (data->map[data->p_y / PIX_H][data->p_x / PIX_W] == 'F')
 	{
-		intro(data, "TOLIARA", "./assets/antakarana.xpm");
-		sleep(3);
+		intro(data, "TOLIARA", "./assets/toliara.xpm");
+		sleep(5);
+		data->count--;
 	}
 	if (data->direction == 0)
 		p_img = data->prs_up[data->anime_prs];
@@ -69,6 +74,17 @@ void	display_coin(t_data *data)
 			&data->w);
 	if (data->coin == NULL)
 		ft_exit(data, "Error:\nLoad xpm image\n");
+	mlx_put_image_to_window(data->mlx, data->win, data->coin, data->x, data->y);
+	mlx_destroy_image(data->mlx, data->coin);
+}
+
+void	display_icons(t_data *data, char *s)
+{
+	data->coin = mlx_xpm_file_to_image(data->mlx, s, &data->h,
+			&data->w);
+	if (data->coin == NULL)
+		ft_exit(data, "Error:\nLoad xpm image\n");
+	data->count++;
 	mlx_put_image_to_window(data->mlx, data->win, data->coin, data->x, data->y);
 	mlx_destroy_image(data->mlx, data->coin);
 }
